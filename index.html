@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GPU PRO · Precios Unitarios</title>
+<title>PRESUBOL - INGJLOC</title>
 <link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#1f3864"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--bg:#f4f6fa;--card:#fff;--tx:#1b2433;--mu:#6b7686;--pr:#1f3864;--ac:#2e75b6;--bd:#dde3ec;--er:#c0392b;--in:#eaf1fb;--hd:#1f3864;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -39,7 +39,7 @@ nav button{flex:1;border:0;background:none;color:var(--mu);padding:8px 2px;font-
 @media print{body>*:not(#rp){display:none!important}#rp{display:block;color:#000;background:#fff;font:11px/1.35 Arial,sans-serif}@page{size:A4;margin:12mm 12mm 16mm;@bottom-right{content:"Pág. " counter(page) " de " counter(pages);font:9px Arial;color:#666}}:root{padding:0!important}body{padding:0!important;background:#fff}}
 #rp table{width:100%;border-collapse:collapse;margin:6px 0}#rp th{background:#1f3864;color:#fff;padding:4px;text-align:left;font-size:10px}#rp td{border-bottom:1px solid #ccc;padding:3px 4px;vertical-align:top}#rp .r{text-align:right;white-space:nowrap}#rp h2{font-size:15px;color:#1f3864;margin:0}#rp .hdr{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #1f3864;padding-bottom:8px;margin-bottom:8px}#rp .ap{break-inside:avoid;page-break-inside:avoid;margin-top:14px}#rp .tt td{font-weight:700}#rp thead{display:table-header-group}#rp tr{break-inside:avoid;page-break-inside:avoid}
 </style></head><body>
-<header class="hd"><h1 id="ht"></h1></header><main id="v"></main>
+<header class="hd"><div style="font-size:11px;opacity:.8;letter-spacing:.04em">PRESUBOL - INGJLOC</div><h1 id="ht"></h1></header><main id="v"></main>
 <nav><button data-a="go" data-t="proj" id="n-proj">📁<span>Proyectos</span></button><button data-a="go" data-t="pres" id="n-pres">📋<span>Presupuesto</span></button><button data-a="go" data-t="apu" id="n-apu">🧱<span>APU</span></button><button data-a="go" data-t="ins" id="n-ins">🔧<span>Insumos</span></button><button data-a="go" data-t="set" id="n-set">⚙️<span>Ajustes</span></button></nav>
 <div id="ts" class="ts"></div><div id="rp"></div>
 <script>
@@ -287,7 +287,7 @@ return h+`</div><h3>Subir o bajar precios por tipo (solo este proyecto)</h3><div
 function bkBanner(){return Date.now()-(U.lb||0)>6048e5?`<div class="card" style="border-color:var(--er)"><b>Respaldo pendiente</b><div class="mu">${U.lb?'Pasó más de una semana desde tu último respaldo.':'Todavía no hiciste ningún respaldo.'} Tus datos viven solo en este navegador.</div><button class="btn" data-a="bkdl">Descargar respaldo ahora</button></div>`:''}
 ACT.rep=d=>{rv=rv===d.t?'':d.t;render()};
 ACT.ptype=()=>{const p=CP();p.pr=p.pr||{};let n=0;U.items.forEach(it=>{const a=A(it.c);if(!a)return;a.l.forEach(l=>{const i=IM()[l[0]];if(!i||!pct[i[1]])return;p.pr[i[0]]=Math.round(gp(i)*(1+pct[i[1]]/100)*100)/100;n++})});save();render();toast(n?'Precios actualizados en este proyecto':'Poné un % en algún tipo')};
-ACT.bkdl=()=>{U.lb=Date.now();save();const b=new Blob([JSON.stringify(U)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='respaldo_GPU_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);render();toast('Respaldo descargado')};
+ACT.bkdl=()=>{U.lb=Date.now();save();const b=new Blob([JSON.stringify(U)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='respaldo_PRESUBOL_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);render();toast('Respaldo descargado')};
 IN.pcx=(v,d)=>{pct[+d.id]=N(v)};CH.wi=(v,d,c)=>{wi=c};CH.wc=(v,d,c)=>{wc=c};
 CH.bkf=(v,d,c,t)=>{const x=t.files[0];if(!x)return;x.text().then(s=>{try{U=norm(JSON.parse(s));save();render();toast('Respaldo importado')}catch(e){toast('Archivo no válido')}})};
 let cmI=null,wm=true;
